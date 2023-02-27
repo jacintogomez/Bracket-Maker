@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<head>
+  <title>Bracket Maker</title>
+  <link rel="icon" href="https://thenounproject.com/api/private/icons/2103887/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABj9nEI3LjuXcWWCW_r-xjLwBSb7W5QH6Ycur8mug960VFEQa6Pg8fYmkmVYiXUQLdJBGlPeWDoiuFYc_Nldfx49Yvtjg%3D%3D">
+  <style>
+    .box{
+      width: 100px;
+      height: 25px;
+      background: blueviolet;
+      border-radius: 10px;
+      position: absolute;
+      display: inline-block;
+      float: left;
+      margin-bottom: 10px;
+    }
+    .box.one{
+      margin-top: 10px;
+    }
+    .box.two{
+      margin-top: 46px;
+    }
+    .box.three{
+      margin-top: 82px;
+    }
+    .box.four{
+      margin-top: 118px;
+    }
+    .box.t1{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t2{
+      margin-top: 82px;
+      margin-left: 125px;
+    }
+    .box.s1{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .namefield {
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+    .box.round{
+      float: left;
+    }
+    .box.r32h1{
+      margin-top: 25px;
+    }
+    .box.r32h2{
+      margin-top: 97px;
+    }
+    .box.r16h1{
+      margin-top: 61px;
+    }
+  </style>
+</head>
+<body>
+<h1>Randomize groups</h1>
+<h3 onclick="func(this, 'red')">Click me to change my text color.</h3>
+<input type='text' id='enternames' value=''><br><br>
+<button onclick='enterinput()'>Assign to Bracket</button><br><br>
+<div class="box one" id="first" onclick="colc(this,document.getElementById('second'),document.getElementById('round2first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box two" id="second" onclick="colc(this,document.getElementById('first'),document.getElementById('round2first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box three" id="third" onclick="colc(this,document.getElementById('fourth'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box four" id="fourth" onclick="colc(this,document.getElementById('third'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+
+<div class="box t1 round r32h1" id="round2first" onclick="colc(this,document.getElementById('round2second'),document.getElementById('round3first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t2 round r32h2" id="round2second" onclick="colc(this,document.getElementById('round2first'),document.getElementById('round3first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+
+<div class="box s1 round r16h1" id="round3first">
+  <div class="namefield">
+
+  </div>
+</div>
+
+<script>
+  function func(element, color) {
+    element.style.color = color;
+  }
+  function colc(element,sister,next){
+    next.innerHTML=element.innerHTML;
+    sister.style.background='red';
+    element.style.background='green';
+  }
+  function sortintobracket(input){
+    var listofids=['first','second','third','fourth'];
+    var count=0;
+    for(var x of listofids){
+      document.getElementById(x).innerHTML=input[count];
+      count++;
+    }
+  }
+  function convert(thing){
+    var entries=[];
+    var actual=[0];
+    for(var x in thing){
+      if(thing[x]==' '){
+        actual.push(x);
+      }
+    }
+    var slicer;
+    for(var i=0;i<actual.length;i++){
+      slicer=thing.slice(actual[i],actual[i+1]);
+      entries.push(slicer);
+    }
+    for(var i=0;i<actual.length;i++){
+      //console.log(entries[i]);
+    }
+    return sortintobracket(entries);
+  }
+  function enterinput(){
+    var names;
+    names=document.getElementById('enternames').value;
+    convert(names);
+  }
+</script>
+</body>
+</html>
