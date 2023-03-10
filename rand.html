@@ -104,43 +104,7 @@
   </div>
 </div>
 
-<script>
-  function func(element, color) {
-    element.style.color = color;
-  }
-  function colc(element,sister,next){
-    next.innerHTML=element.innerHTML;
-    sister.style.background='red';
-    element.style.background='green';
-  }
-  function sortintobracket(input){
-    var listofids=['first','second','third','fourth'];
-    var count=0;
-    for(var x of listofids){
-      document.getElementById(x).getElementsByClassName('namefield')[0].innerHTML=input[count];
-      count++;
-    }
-  }
-  function convert(thing){
-    var entries=[];
-    var actual=[0];
-    for(var x in thing){
-      if(thing[x]==' '){
-        actual.push(x);
-      }
-    }
-    var slicer;
-    for(var i=0;i<actual.length;i++){
-      slicer=thing.slice(actual[i],actual[i+1]);
-      entries.push(slicer);
-    }
-    return sortintobracket(entries);
-  }
-  function enterinput(){
-    var names;
-    names=document.getElementById('enternames').value;
-    convert(names);
-  }
+<script src="randomize.js">
 </script>
 </body>
 </html>

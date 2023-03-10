@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<head>
+  <title>Bracket Maker</title>
+  <link rel="icon" href="https://thenounproject.com/api/private/icons/2103887/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABj9nEI3LjuXcWWCW_r-xjLwBSb7W5QH6Ycur8mug960VFEQa6Pg8fYmkmVYiXUQLdJBGlPeWDoiuFYc_Nldfx49Yvtjg%3D%3D">
+  <style>
+    body{
+      background-image: url("https://images.alphacoders.com/116/1169862.jpg");
+      height: 100%;
+      background-repeat: repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .heading{
+      color: yellow;
+      font-size: 40px;
+    }
+    .cent{
+      text-align: center;
+    }
+    .box{
+      width: 100px;
+      height: 25px;
+      background: blueviolet;
+      border-radius: 10px;
+      position: absolute;
+      display: inline-block;
+      float: left;
+      margin-bottom: 10px;
+      white-space: nowrap;
+    }
+    .bin{
+      width: 142px;
+      height: 50px;
+      background: blueviolet;
+      border-radius: 15px;
+      position: absolute;
+      display: inline-block;
+      float: left;
+      margin-bottom: 20px;
+      border: 4px solid yellow;
+    }
+    .box.one{
+      margin-top: 10px;
+    }
+    .box.two{
+      margin-top: 46px;
+    }
+    .box.three{
+      margin-top: 82px;
+    }
+    .box.four{
+      margin-top: 118px;
+    }
+    .box.five{
+      margin-top: 154px;
+    }
+    .box.six{
+      margin-top: 190px;
+    }
+    .box.seven{
+      margin-top: 226px;
+    }
+    .box.eight{
+      margin-top: 262px;
+    }
+    .box.nine{
+      margin-top: 298px;
+    }
+    .box.ten{
+      margin-top: 334px;
+    }
+    .box.eleven{
+      margin-top: 370px;
+    }
+    .box.twelve{
+      margin-top: 406px;
+    }
+    .box.thirteen{
+      margin-top: 442px;
+    }
+    .box.fourteen{
+      margin-top: 478px;
+    }
+    .box.fifteen{
+      margin-top: 514px;
+    }
+    .box.sixteen{
+      margin-top: 550px;
+    }
+    .box.seventeen{
+      margin-top: 10px;
+      margin-left: 1250px;
+    }
+    .box.eighteen{
+      margin-top: 46px;
+      margin-left: 1250px;
+    }
+    .box.nineteen{
+      margin-top: 82px;
+      margin-left: 1250px;
+    }
+    .box.twenty{
+      margin-top: 118px;
+      margin-left: 1250px;
+    }
+    .box.twentyone{
+      margin-top: 154px;
+      margin-left: 1250px;
+    }
+    .box.twentytwo{
+      margin-top: 190px;
+      margin-left: 1250px;
+    }
+    .box.twentythree{
+      margin-top: 226px;
+      margin-left: 1250px;
+    }
+    .box.twentyfour{
+      margin-top: 262px;
+      margin-left: 1250px;
+    }
+    .box.twentyfive{
+      margin-top: 298px;
+      margin-left: 1250px;
+    }
+    .box.twentysix{
+      margin-top: 334px;
+      margin-left: 1250px;
+    }
+    .box.twentyseven{
+      margin-top: 370px;
+      margin-left: 1250px;
+    }
+    .box.twentyeight{
+      margin-top: 406px;
+      margin-left: 1250px;
+    }
+    .box.twentynine{
+      margin-top: 442px;
+      margin-left: 1250px;
+    }
+    .box.thirty{
+      margin-top: 478px;
+      margin-left: 1250px;
+    }
+    .box.thirtyone{
+      margin-top: 514px;
+      margin-left: 1250px;
+    }
+    .box.thirtytwo{
+      margin-top: 550px;
+      margin-left: 1250px;
+    }
+    .box.t1{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t2{
+      margin-top: 82px;
+      margin-left: 125px;
+    }
+    .box.t3{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t4{
+      margin-top: 82px;
+      margin-left: 125px;
+    }
+    .box.t5{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t6{
+      margin-top: 82px;
+      margin-left: 125px;
+    }
+    .box.t7{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t8{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t9{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t10{
+      margin-top: 82px;
+      margin-left: 1125px;
+    }
+    .box.t11{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t12{
+      margin-top: 82px;
+      margin-left: 1125px;
+    }
+    .box.t13{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t14{
+      margin-top: 82px;
+      margin-left: 1125px;
+    }
+    .box.t15{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t16{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.s1{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s2{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s3{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s4{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s5{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.s6{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.s7{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.s8{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.q1{
+      margin-top: 66px;
+      margin-left: 375px;
+    }
+    .box.q2{
+      margin-top: 66px;
+      margin-left: 375px;
+    }
+    .box.q3{
+      margin-top: 66px;
+      margin-left: 875px;
+    }
+    .box.q4{
+      margin-top: 66px;
+      margin-left: 875px;
+    }
+    .box.sf1{
+      margin-top: 66px;
+      margin-left: 500px;
+    }
+    .box.sf2{
+      margin-top: 66px;
+      margin-left: 750px;
+    }
+    .box.almost{
+      margin-top: 80px;
+      margin-left: 600px;
+    }
+    .box.thirtythree{
+      margin-top: 586px;
+    }
+    .box.thirtyfour{
+      margin-top: 622px;
+    }
+    .box.thirtyfive{
+      margin-top: 658px;
+    }
+    .box.thirtysix{
+      margin-top: 694px;
+    }
+    .box.thirtyseven{
+      margin-top: 730px;
+    }
+    .box.thirtyeight{
+      margin-top: 766px;
+    }
+    .box.thirtynine{
+      margin-top: 802px;
+    }
+    .box.forty{
+      margin-top: 838px;
+    }
+    .box.fortyone{
+      margin-top: 874px;
+    }
+    .box.fortytwo{
+      margin-top: 910px;
+    }
+    .box.fortythree{
+      margin-top: 946px;
+    }
+    .box.fortyfour{
+      margin-top: 982px;
+    }
+    .box.fortyfive{
+      margin-top: 1018px;
+    }
+    .box.fortysix{
+      margin-top: 1054px;
+    }
+    .box.fortyseven{
+      margin-top: 1090px;
+    }
+    .box.fortyeight{
+      margin-top: 1126px;
+    }
+    .box.fortynine{
+      margin-top: 586px;
+      margin-left: 1250px;
+    }
+    .box.fifty{
+      margin-top: 622px;
+      margin-left: 1250px;
+    }
+    .box.fiftyone{
+      margin-top: 658px;
+      margin-left: 1250px;
+    }
+    .box.fiftytwo{
+      margin-top: 694px;
+      margin-left: 1250px;
+    }
+    .box.fiftythree{
+      margin-top: 730px;
+      margin-left: 1250px;
+    }
+    .box.fiftyfour{
+      margin-top: 766px;
+      margin-left: 1250px;
+    }
+    .box.fiftyfive{
+      margin-top: 802px;
+      margin-left: 1250px;
+    }
+    .box.fiftysix{
+      margin-top: 838px;
+      margin-left: 1250px;
+    }
+    .box.fiftyseven{
+      margin-top: 874px;
+      margin-left: 1250px;
+    }
+    .box.fiftyeight{
+      margin-top: 910px;
+      margin-left: 1250px;
+    }
+    .box.fiftynine{
+      margin-top: 946px;
+      margin-left: 1250px;
+    }
+    .box.sixty{
+      margin-top: 982px;
+      margin-left: 1250px;
+    }
+    .box.sixtyone{
+      margin-top: 1018px;
+      margin-left: 1250px;
+    }
+    .box.sixtytwo{
+      margin-top: 1054px;
+      margin-left: 1250px;
+    }
+    .box.sixtythree{
+      margin-top: 1090px;
+      margin-left: 1250px;
+    }
+    .box.sixtyfour{
+      margin-top: 1126px;
+      margin-left: 1250px;
+    }
+    .box.t1{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t2{
+      margin-top: 82px;
+      margin-left: 125px;
+    }
+    .box.t3{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t4{
+      margin-top: 82px;
+      margin-left: 125px;
+    }
+    .box.t5{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t6{
+      margin-top: 82px;
+      margin-left: 125px;
+    }
+    .box.t7{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t8{
+      margin-top: 46px;
+      margin-left: 125px;
+    }
+    .box.t9{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t10{
+      margin-top: 82px;
+      margin-left: 1125px;
+    }
+    .box.t11{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t12{
+      margin-top: 82px;
+      margin-left: 1125px;
+    }
+    .box.t13{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t14{
+      margin-top: 82px;
+      margin-left: 1125px;
+    }
+    .box.t15{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.t16{
+      margin-top: 46px;
+      margin-left: 1125px;
+    }
+    .box.s1{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s2{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s3{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s4{
+      margin-top: 66px;
+      margin-left: 250px;
+    }
+    .box.s5{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.s6{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.s7{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.s8{
+      margin-top: 66px;
+      margin-left: 1000px;
+    }
+    .box.q1{
+      margin-top: 66px;
+      margin-left: 375px;
+    }
+    .box.q2{
+      margin-top: 66px;
+      margin-left: 375px;
+    }
+    .box.q3{
+      margin-top: 66px;
+      margin-left: 875px;
+    }
+    .box.q4{
+      margin-top: 66px;
+      margin-left: 875px;
+    }
+    .box.sf1{
+      margin-top: 66px;
+      margin-left: 500px;
+    }
+    .box.sf2{
+      margin-top: 66px;
+      margin-left: 750px;
+    }
+    .bin.fin{
+      margin-top: 80px;
+      margin-left: 600px;
+    }
+    .namefield {
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+    .box.round{
+      float: left;
+    }
+    .box.r32h1{
+      margin-top: 25px;
+    }
+    .box.r32h2{
+      margin-top: 97px;
+    }
+    .box.r32h3{
+      margin-top: 169px;
+    }
+    .box.r32h4{
+      margin-top: 241px;
+    }
+    .box.r32h5{
+      margin-top: 313px;
+    }
+    .box.r32h6{
+      margin-top: 385px;
+    }
+    .box.r32h7{
+      margin-top: 457px;
+    }
+    .box.r32h8{
+      margin-top: 529px;
+    }
+    .box.r16h1{
+      margin-top: 61px;
+    }
+    .box.r16h2{
+      margin-top: 205px;
+    }
+    .box.r16h3{
+      margin-top: 349px;
+    }
+    .box.r16h4{
+      margin-top: 493px;
+    }
+    .box.qh1{
+      margin-top: 133px;
+    }
+    .box.qh2{
+      margin-top: 421px;
+    }
+    .box.sfh1{
+      margin-top: 277px;
+    }
+  </style>
+</head>
+<body>
+<div class="cent">
+  <h1 style="color:white">Tournament Bracket</h1>
+  <input type='text' id='enternames' value=''><br><br>
+  <button onclick='enterinput()'>Assign to Bracket</button><br><br>
+  <div class="heading" id="winnermessage">
+    <h1></h1>
+  </div>
+</div>
+<div class="box one" id="first" onclick="colc(this,document.getElementById('second'),document.getElementById('round2first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box two" id="second" onclick="colc(this,document.getElementById('first'),document.getElementById('round2first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box three" id="third" onclick="colc(this,document.getElementById('fourth'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box four" id="fourth" onclick="colc(this,document.getElementById('third'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box five" id="fifth" onclick="colc(this,document.getElementById('sixth'),document.getElementById('round2third'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box six" id="sixth" onclick="colc(this,document.getElementById('fifth'),document.getElementById('round2third'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box seven" id="seventh" onclick="colc(this,document.getElementById('eighth'),document.getElementById('round2fourth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box eight" id="eighth" onclick="colc(this,document.getElementById('seventh'),document.getElementById('round2fourth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box nine" id="ninth" onclick="colc(this,document.getElementById('tenth'),document.getElementById('round2fifth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box ten" id="tenth" onclick="colc(this,document.getElementById('ninth'),document.getElementById('round2fifth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box eleven" id="eleventh" onclick="colc(this,document.getElementById('twelfth'),document.getElementById('round2sixth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twelve" id="twelfth" onclick="colc(this,document.getElementById('eleventh'),document.getElementById('round2sixth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirteen" id="thirteenth" onclick="colc(this,document.getElementById('fourteenth'),document.getElementById('round2seventh'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fourteen" id="fourteenth" onclick="colc(this,document.getElementById('thirteenth'),document.getElementById('round2seventh'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fifteen" id="fifteenth" onclick="colc(this,document.getElementById('sixteenth'),document.getElementById('round2eighth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixteen" id="sixteenth" onclick="colc(this,document.getElementById('fifteenth'),document.getElementById('round2eighth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box seventeen" id="seventeenth" onclick="colc(this,document.getElementById('eighteenth'),document.getElementById('round2ninth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box eighteen" id="eighteenth" onclick="colc(this,document.getElementById('seventeenth'),document.getElementById('round2ninth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box nineteen" id="nineteenth" onclick="colc(this,document.getElementById('twentieth'),document.getElementById('round2-10'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twenty" id="twentieth" onclick="colc(this,document.getElementById('nineteenth'),document.getElementById('round2-10'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentyone" id="twenty1" onclick="colc(this,document.getElementById('twenty2'),document.getElementById('round2-11'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentytwo" id="twenty2" onclick="colc(this,document.getElementById('twenty1'),document.getElementById('round2-11'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentythree" id="twenty3" onclick="colc(this,document.getElementById('twenty4'),document.getElementById('round2-12'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentyfour" id="twenty4" onclick="colc(this,document.getElementById('twenty3'),document.getElementById('round2-12'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentyfive" id="twenty5" onclick="colc(this,document.getElementById('twenty6'),document.getElementById('round2-13'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentysix" id="twenty6" onclick="colc(this,document.getElementById('twenty5'),document.getElementById('round2-13'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentyseven" id="twenty7" onclick="colc(this,document.getElementById('twenty8'),document.getElementById('round2-14'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentyeight" id="twenty8" onclick="colc(this,document.getElementById('twenty7'),document.getElementById('round2-14'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twentynine" id="twenty9" onclick="colc(this,document.getElementById('thirty0'),document.getElementById('round2-15'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirty" id="thirty0" onclick="colc(this,document.getElementById('twenty9'),document.getElementById('round2-15'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtyone" id="thirty1" onclick="colc(this,document.getElementById('thirty2'),document.getElementById('round2-16'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtytwo" id="thirty2" onclick="colc(this,document.getElementById('thirty1'),document.getElementById('round2-16'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtythree" id="thirty3" onclick="colc(this,document.getElementById('thirty4'),document.getElementById('round2-17'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtyfour" id="thirty4" onclick="colc(this,document.getElementById('thirty3'),document.getElementById('round2-17'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtyfive" id="thirty5" onclick="colc(this,document.getElementById('thirty6'),document.getElementById('round2-18'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtysix" id="thirty6" onclick="colc(this,document.getElementById('thirty5'),document.getElementById('round2-18'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtyseven" id="thirty7" onclick="colc(this,document.getElementById('thirty8'),document.getElementById('round2-19'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtyeight" id="thirty8" onclick="colc(this,document.getElementById('thirty7'),document.getElementById('round2-19'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirtynine" id="thirty9" onclick="colc(this,document.getElementById('forty0'),document.getElementById('round2-20'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box forty" id="forty0" onclick="colc(this,document.getElementById('thirty9'),document.getElementById('round2-20'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortyone" id="forty1" onclick="colc(this,document.getElementById('forty2'),document.getElementById('round2-21'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortytwo" id="forty2" onclick="colc(this,document.getElementById('forty1'),document.getElementById('round2-21'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortythree" id="forty3" onclick="colc(this,document.getElementById('forty4'),document.getElementById('round2-22'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortyfour" id="forty4" onclick="colc(this,document.getElementById('forty3'),document.getElementById('round2-22'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortyfive" id="forty5" onclick="colc(this,document.getElementById('forty6'),document.getElementById('round2-23'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortysix" id="forty6" onclick="colc(this,document.getElementById('forty5'),document.getElementById('round2-23'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortyseven" id="forty7" onclick="colc(this,document.getElementById('forty8'),document.getElementById('round2-24'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortyeight" id="forty8" onclick="colc(this,document.getElementById('forty7'),document.getElementById('round2-24'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fortynine" id="forty9" onclick="colc(this,document.getElementById('fifty0'),document.getElementById('round2-25'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fifty" id="fifty0" onclick="colc(this,document.getElementById('forty9'),document.getElementById('round2-25'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftyone" id="fifty1" onclick="colc(this,document.getElementById('fifty2'),document.getElementById('round2-26'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftytwo" id="fifty2" onclick="colc(this,document.getElementById('fifty1'),document.getElementById('round2-26'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftythree" id="fifty3" onclick="colc(this,document.getElementById('fifty4'),document.getElementById('round2-27'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftyfour" id="fifty4" onclick="colc(this,document.getElementById('fifty3'),document.getElementById('round2-27'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftyfive" id="fifty5" onclick="colc(this,document.getElementById('fifty6'),document.getElementById('round2-28'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftysix" id="fifty6" onclick="colc(this,document.getElementById('fifty5'),document.getElementById('round2-28'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftyseven" id="fifty7" onclick="colc(this,document.getElementById('fifty8'),document.getElementById('round2-29'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftyeight" id="fifty8" onclick="colc(this,document.getElementById('fifty7'),document.getElementById('round2-29'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fiftynine" id="fifty9" onclick="colc(this,document.getElementById('sixty0'),document.getElementById('round2-30'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixty" id="sixty0" onclick="colc(this,document.getElementById('fifty9'),document.getElementById('round2-30'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixtyone" id="sixty1" onclick="colc(this,document.getElementById('sixty2'),document.getElementById('round2-31'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixtytwo" id="sixty2" onclick="colc(this,document.getElementById('sixty1'),document.getElementById('round2-31'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixtythree" id="sixty3" onclick="colc(this,document.getElementById('sixty4'),document.getElementById('round2-32'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixtyfour" id="sixty4" onclick="colc(this,document.getElementById('sixty3'),document.getElementById('round2-32'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t1 round r32h1" id="round2first" onclick="colc(this,document.getElementById('round2second'),document.getElementById('round3-1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t2 round r32h2" id="round2second" onclick="colc(this,document.getElementById('round2first'),document.getElementById('round3-1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t3 round r32h3" id="round2third" onclick="colc(this,document.getElementById('round2fourth'),document.getElementById('round3-2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t4 round r32h4" id="round2fourth" onclick="colc(this,document.getElementById('round2third'),document.getElementById('round3-2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t5 round r32h5" id="round2fifth" onclick="colc(this,document.getElementById('round2sixth'),document.getElementById('round3-3'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t6 round r32h6" id="round2sixth" onclick="colc(this,document.getElementById('round2fifth'),document.getElementById('round3-3'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t7 round r32h7" id="round2seventh" onclick="colc(this,document.getElementById('round2eighth'),document.getElementById('round3-4'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t8 round r32h8" id="round2eighth" onclick="colc(this,document.getElementById('round2seventh'),document.getElementById('round3-4'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t9 round r32h1" id="round2ninth" onclick="colc(this,document.getElementById('round2-10'),document.getElementById('round3-5'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t10 round r32h2" id="round2-10" onclick="colc(this,document.getElementById('round2ninth'),document.getElementById('round3-5'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t11 round r32h3" id="round2-11" onclick="colc(this,document.getElementById('round2-12'),document.getElementById('round3-6'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t12 round r32h4" id="round2-12" onclick="colc(this,document.getElementById('round2-11'),document.getElementById('round3-6'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t13 round r32h5" id="round2-13" onclick="colc(this,document.getElementById('round2-14'),document.getElementById('round3-7'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t14 round r32h6" id="round2-14" onclick="colc(this,document.getElementById('round2-13'),document.getElementById('round3-7'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t15 round r32h7" id="round2-15" onclick="colc(this,document.getElementById('round2-16'),document.getElementById('round3-8'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t16 round r32h8" id="round2-16" onclick="colc(this,document.getElementById('round2-15'),document.getElementById('round3-8'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s1 round r16h1" id="round3-1" onclick="colc(this,document.getElementById('round3-2'),document.getElementById('quarter1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s2 round r16h2" id="round3-2" onclick="colc(this,document.getElementById('round3-1'),document.getElementById('quarter1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s3 round r16h3" id="round3-3" onclick="colc(this,document.getElementById('round3-4'),document.getElementById('quarter2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s4 round r16h4" id="round3-4" onclick="colc(this,document.getElementById('round3-3'),document.getElementById('quarter2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s5 round r16h1" id="round3-5" onclick="colc(this,document.getElementById('round3-6'),document.getElementById('quarter3'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s6 round r16h2" id="round3-6" onclick="colc(this,document.getElementById('round3-5'),document.getElementById('quarter3'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s7 round r16h3" id="round3-7" onclick="colc(this,document.getElementById('round3-8'),document.getElementById('quarter4'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s8 round r16h4" id="round3-8" onclick="colc(this,document.getElementById('round3-7'),document.getElementById('quarter4'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box q1 round qh1" id="quarter1" onclick="colc(this,document.getElementById('quarter2'),document.getElementById('semi1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box q2 round qh2" id="quarter2" onclick="colc(this,document.getElementById('quarter1'),document.getElementById('semi1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box q3 round qh1" id="quarter3" onclick="colc(this,document.getElementById('quarter4'),document.getElementById('semi2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box q4 round qh2" id="quarter4" onclick="colc(this,document.getElementById('quarter3'),document.getElementById('semi2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sf1 round sfh1" id="semi1" onclick="colc(this,document.getElementById('semi2'),document.getElementById('final'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sf2 round sfh1" id="semi2" onclick="colc(this,document.getElementById('semi1'),document.getElementById('final'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="bin fin round sfh1" id="final" onclick="winner(this,document.getElementById('winnermessage'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<script>
+  function winner(me,you){
+    me.style.background='yellow';
+    var finale=me.getElementsByClassName('namefield')[0].innerHTML;
+    you.innerHTML='Winner is '+finale+'!';
+  }
+  function colc(element,sister,next){
+    next.innerHTML=element.innerHTML;
+    sister.style.background='#F2B8B8';
+    element.style.background='#B8F2B8';
+    // if(next.id=='final'){
+    //   winner(next,document.getElementById('winnermessage'));
+    // }
+  }
+  function sortintobracket(input){
+    var listofids=['first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','eleventh','twelfth','thirteenth','fourteenth','fifteenth','sixteenth','seventeenth','eighteenth','nineteenth','twentieth','twenty1','twenty2','twenty3','twenty4','twenty5','twenty6','twenty7','twenty8','twenty9','thirty0','thirty1','thirty2'];
+    var count=0;
+    for(var x of listofids){
+      if(input[count]!=null){
+        document.getElementById(x).getElementsByClassName('namefield')[0].innerHTML=input[count];
+        count++;
+      }
+    }
+  }
+  // function convert(thing){
+  //   var entries=[];
+  //   var actual=[0];
+  //   for(var x in thing){
+  //     if(thing[x]==','){
+  //       actual.push(x);
+  //     }
+  //   }
+  //   var slicer;
+  //   for(var i=0;i<actual.length;i++){
+  //     slicer=thing.slice(actual[i],actual[i+1]);
+  //     entries.push(slicer);
+  //   }
+  //   return sortintobracket(entries);
+  // }
+  function convert(thing){
+    var result=[];
+    var temp='';
+    for(var i=0;i<thing.length;i++){
+      if(thing[i]!=' '){
+        temp+=thing[i];
+      }else{
+        result.push(temp);
+        temp='';
+      }
+    }
+    result.push(temp);
+    return sortintobracket(result);
+  }
+  function enterinput(){
+    var names;
+    names=document.getElementById('enternames').value;
+    convert(names);
+  }
+</script>
+</body>
+</html>
+
