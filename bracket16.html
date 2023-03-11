@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<head>
+  <title>Bracket Maker</title>
+  <link rel="icon" href="https://thenounproject.com/api/private/icons/2103887/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0&token=gAAAAABj9nEI3LjuXcWWCW_r-xjLwBSb7W5QH6Ycur8mug960VFEQa6Pg8fYmkmVYiXUQLdJBGlPeWDoiuFYc_Nldfx49Yvtjg%3D%3D">
+  <style>
+    body{
+      background-image: url("https://images.alphacoders.com/116/1169862.jpg");
+      height: 100%;
+      background-repeat: repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .heading{
+      color: yellow;
+      font-size: 40px;
+    }
+    .cent{
+      text-align: center;
+    }
+    .box{
+      width: 200px;
+      height: 25px;
+      background: blueviolet;
+      border-radius: 10px;
+      position: absolute;
+      display: inline-block;
+      float: left;
+      margin-bottom: 10px;
+      white-space: nowrap;
+    }
+    .bin{
+      width: 200px;
+      height: 50px;
+      background: blueviolet;
+      border-radius: 15px;
+      position: absolute;
+      display: inline-block;
+      float: left;
+      margin-bottom: 20px;
+      border: 4px solid yellow;
+    }
+    .box.one{
+      margin-top: 10px;
+    }
+    .box.two{
+      margin-top: 46px;
+    }
+    .box.three{
+      margin-top: 82px;
+    }
+    .box.four{
+      margin-top: 118px;
+    }
+    .box.five{
+      margin-top: 154px;
+    }
+    .box.six{
+      margin-top: 190px;
+    }
+    .box.seven{
+      margin-top: 226px;
+    }
+    .box.eight{
+      margin-top: 262px;
+    }
+    .box.nine{
+      margin-top: 298px;
+    }
+    .box.ten{
+      margin-top: 334px;
+    }
+    .box.eleven{
+      margin-top: 370px;
+    }
+    .box.twelve{
+      margin-top: 406px;
+    }
+    .box.thirteen{
+      margin-top: 442px;
+    }
+    .box.fourteen{
+      margin-top: 478px;
+    }
+    .box.fifteen{
+      margin-top: 514px;
+    }
+    .box.sixteen{
+      margin-top: 550px;
+    }
+
+    .box.t1{
+      margin-top: 46px;
+      margin-left: 250px;
+    }
+    .box.t2{
+      margin-top: 82px;
+      margin-left: 250px;
+    }
+    .box.t3{
+      margin-top: 46px;
+      margin-left: 250px;
+    }
+    .box.t4{
+      margin-top: 82px;
+      margin-left: 250px;
+    }
+    .box.t5{
+      margin-top: 46px;
+      margin-left: 250px;
+    }
+    .box.t6{
+      margin-top: 82px;
+      margin-left: 250px;
+    }
+    .box.t7{
+      margin-top: 46px;
+      margin-left: 250px;
+    }
+    .box.t8{
+      margin-top: 46px;
+      margin-left: 250px;
+    }
+
+    .box.s1{
+      margin-top: 66px;
+      margin-left: 500px;
+    }
+    .box.s2{
+      margin-top: 66px;
+      margin-left: 500px;
+    }
+    .box.s3{
+      margin-top: 66px;
+      margin-left: 500px;
+    }
+    .box.s4{
+      margin-top: 66px;
+      margin-left: 500px;
+    }
+
+    .box.q1{
+      margin-top: 66px;
+      margin-left: 750px;
+    }
+    .box.q2{
+      margin-top: 66px;
+      margin-left: 750px;
+    }
+
+    .bin.fin{
+      margin-top: 260px;
+      margin-left: 1000px;
+    }
+    .namefield {
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+    .box.round{
+      float: left;
+    }
+    .box.r32h1{
+      margin-top: 25px;
+    }
+    .box.r32h2{
+      margin-top: 97px;
+    }
+    .box.r32h3{
+      margin-top: 169px;
+    }
+    .box.r32h4{
+      margin-top: 241px;
+    }
+    .box.r32h5{
+      margin-top: 313px;
+    }
+    .box.r32h6{
+      margin-top: 385px;
+    }
+    .box.r32h7{
+      margin-top: 457px;
+    }
+    .box.r32h8{
+      margin-top: 529px;
+    }
+    .box.r16h1{
+      margin-top: 61px;
+    }
+    .box.r16h2{
+      margin-top: 205px;
+    }
+    .box.r16h3{
+      margin-top: 349px;
+    }
+    .box.r16h4{
+      margin-top: 493px;
+    }
+    .box.qh1{
+      margin-top: 133px;
+    }
+    .box.qh2{
+      margin-top: 421px;
+    }
+  </style>
+</head>
+<body>
+<div class="cent">
+  <h1 style="color:white">Tournament Bracket</h1>
+  <input type='text' id='enternames' value=''><br><br>
+  <button onclick='enterinput()'>Assign to Bracket</button><br><br>
+  <div class="heading" id="winnermessage">
+    <h1></h1>
+  </div>
+</div>
+<div class="box one" id="first" onclick="colc(this,document.getElementById('second'),document.getElementById('round2first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box two" id="second" onclick="colc(this,document.getElementById('first'),document.getElementById('round2first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box three" id="third" onclick="colc(this,document.getElementById('fourth'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box four" id="fourth" onclick="colc(this,document.getElementById('third'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box five" id="fifth" onclick="colc(this,document.getElementById('sixth'),document.getElementById('round2third'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box six" id="sixth" onclick="colc(this,document.getElementById('fifth'),document.getElementById('round2third'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box seven" id="seventh" onclick="colc(this,document.getElementById('eighth'),document.getElementById('round2fourth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box eight" id="eighth" onclick="colc(this,document.getElementById('seventh'),document.getElementById('round2fourth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box nine" id="ninth" onclick="colc(this,document.getElementById('tenth'),document.getElementById('round2fifth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box ten" id="tenth" onclick="colc(this,document.getElementById('ninth'),document.getElementById('round2fifth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box eleven" id="eleventh" onclick="colc(this,document.getElementById('twelfth'),document.getElementById('round2sixth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twelve" id="twelfth" onclick="colc(this,document.getElementById('eleventh'),document.getElementById('round2sixth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirteen" id="thirteenth" onclick="colc(this,document.getElementById('fourteenth'),document.getElementById('round2seventh'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fourteen" id="fourteenth" onclick="colc(this,document.getElementById('thirteenth'),document.getElementById('round2seventh'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fifteen" id="fifteenth" onclick="colc(this,document.getElementById('sixteenth'),document.getElementById('round2eighth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixteen" id="sixteenth" onclick="colc(this,document.getElementById('fifteenth'),document.getElementById('round2eighth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t1 round r32h1" id="round2first" onclick="colc(this,document.getElementById('round2second'),document.getElementById('round3-1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t2 round r32h2" id="round2second" onclick="colc(this,document.getElementById('round2first'),document.getElementById('round3-1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t3 round r32h3" id="round2third" onclick="colc(this,document.getElementById('round2fourth'),document.getElementById('round3-2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t4 round r32h4" id="round2fourth" onclick="colc(this,document.getElementById('round2third'),document.getElementById('round3-2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t5 round r32h5" id="round2fifth" onclick="colc(this,document.getElementById('round2sixth'),document.getElementById('round3-3'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t6 round r32h6" id="round2sixth" onclick="colc(this,document.getElementById('round2fifth'),document.getElementById('round3-3'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t7 round r32h7" id="round2seventh" onclick="colc(this,document.getElementById('round2eighth'),document.getElementById('round3-4'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box t8 round r32h8" id="round2eighth" onclick="colc(this,document.getElementById('round2seventh'),document.getElementById('round3-4'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s1 round r16h1" id="round3-1" onclick="colc(this,document.getElementById('round3-2'),document.getElementById('quarter1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s2 round r16h2" id="round3-2" onclick="colc(this,document.getElementById('round3-1'),document.getElementById('quarter1'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s3 round r16h3" id="round3-3" onclick="colc(this,document.getElementById('round3-4'),document.getElementById('quarter2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box s4 round r16h4" id="round3-4" onclick="colc(this,document.getElementById('round3-3'),document.getElementById('quarter2'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box q1 round qh1" id="quarter1" onclick="colc(this,document.getElementById('quarter2'),document.getElementById('final'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box q2 round qh2" id="quarter2" onclick="colc(this,document.getElementById('quarter1'),document.getElementById('final'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="bin fin round sfh1" id="final" onclick="winner(this,document.getElementById('winnermessage'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<script>
+  function winner(me,you){
+    me.style.background='yellow';
+    var finale=me.getElementsByClassName('namefield')[0].innerHTML;
+    you.innerHTML='Winner is '+finale+'!';
+  }
+  function colc(element,sister,next){
+    next.innerHTML=element.innerHTML;
+    sister.style.background='#F2B8B8';
+    element.style.background='#B8F2B8';
+    // if(next.id=='final'){
+    //   winner(next,document.getElementById('winnermessage'));
+    // }
+  }
+  function sortintobracket(input){
+    var listofids=['first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','eleventh','twelfth','thirteenth','fourteenth','fifteenth','sixteenth'];
+    var count=0;
+    for(var x of listofids){
+      if(input[count]!=null){
+        document.getElementById(x).getElementsByClassName('namefield')[0].innerHTML=input[count];
+        count++;
+      }
+    }
+  }
+  function convert(thing){
+    var result=[];
+    var temp='';
+    for(var i=0;i<thing.length;i++){
+      if(thing[i]!=' '){
+        temp+=thing[i];
+      }else{
+        result.push(temp);
+        temp='';
+      }
+    }
+    result.push(temp);
+    return sortintobracket(result);
+  }
+  function enterinput(){
+    var names;
+    names=document.getElementById('enternames').value;
+    convert(names);
+  }
+</script>
+</body>
+</html>
