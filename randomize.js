@@ -40,3 +40,9 @@ function enterinput(){
   names=document.getElementById('enternames').value;
   convert(names);
 }
+function randomIntFromInterval(min, max) { // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+for(var x=0;x<100;x++){
+  console.log(randomIntFromInterval(0,63));
+}

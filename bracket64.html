@@ -663,7 +663,8 @@
   <h1 style="color:white">Tournament Bracket</h1>
   <h2 style="color:white">64 Teams</h2>
   <input type='text' id='enternames' value=''><br><br>
-  <button onclick='enterinput()'>Assign to Bracket</button><br><br>
+  <button onclick='enterinput(0)'>Assign to Bracket</button><br><br>
+  <button onclick='enterinput(1)'>Randomize Seeds</button><br><br>
   <div class="heading" id="winnermessage">
     <h1></h1>
   </div>
@@ -1317,13 +1318,24 @@
     //   winner(next,document.getElementById('winnermessage'));
     // }
   }
-  function sortintobracket(input){
+  function randomIntFromInterval(min, max) { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+  function sortintobracket(input,v){
     var listofids=['first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','eleventh','twelfth','thirteenth','fourteenth','fifteenth','sixteenth','seventeenth','eighteenth','nineteenth','twentieth','twenty1','twenty2','twenty3','twenty4','twenty5','twenty6','twenty7','twenty8','twenty9','thirty0','thirty1','thirty2','thirty3','thirty4','thirty5','thirty6','thirty7','thirty8','thirty9','forty0','forty1','forty2','forty3','forty4','forty5','forty6','forty7','forty8','forty9','fifty0','fifty1','fifty2','fifty3','fifty4','fifty5','fifty6','fifty7','fifty8','fifty9','sixty0','sixty1','sixty2','sixty3','sixty4'];
     var count=0;
-    for(var x of listofids){
-      if(input[count]!=null){
-        document.getElementById(x).getElementsByClassName('namefield')[0].innerHTML=input[count];
-        count++;
+    if(v===0){
+      for(var x of listofids){
+        if(input[count]!=null){
+          document.getElementById(x).getElementsByClassName('namefield')[0].innerHTML=input[count];
+          count++;
+        }
+      }
+    }else{
+      for(var x of listofids){
+        var i=randomIntFromInterval(0,input.length-1);
+        document.getElementById(x).getElementsByClassName('namefield')[0].innerHTML=input[i];
+        input.splice(i,1);
       }
     }
   }
@@ -1342,7 +1354,7 @@
   //   }
   //   return sortintobracket(entries);
   // }
-  function convert(thing){
+  function convert(thing,v){
     var result=[];
     var temp='';
     for(var i=0;i<thing.length;i++){
@@ -1354,12 +1366,12 @@
       }
     }
     result.push(temp);
-    return sortintobracket(result);
+    return sortintobracket(result,v);
   }
-  function enterinput(){
+  function enterinput(v){
     var names;
     names=document.getElementById('enternames').value;
-    convert(names);
+    convert(names,v);
   }
 </script>
 </body>
