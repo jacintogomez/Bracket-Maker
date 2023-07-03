@@ -1339,26 +1339,11 @@
       }
     }
   }
-  // function convert(thing){
-  //   var entries=[];
-  //   var actual=[0];
-  //   for(var x in thing){
-  //     if(thing[x]==','){
-  //       actual.push(x);
-  //     }
-  //   }
-  //   var slicer;
-  //   for(var i=0;i<actual.length;i++){
-  //     slicer=thing.slice(actual[i],actual[i+1]);
-  //     entries.push(slicer);
-  //   }
-  //   return sortintobracket(entries);
-  // }
   function convert(thing,v){
     var result=[];
     var temp='';
     for(var i=0;i<thing.length;i++){
-      if(thing[i]!=' '){
+      if(thing[i]!==' '){
         temp+=thing[i];
       }else{
         result.push(temp);
