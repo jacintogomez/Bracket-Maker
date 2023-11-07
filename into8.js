@@ -15,7 +15,7 @@ function randomIntFromInterval(min, max) { // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 function sortintobracket(input,v){
-  var listofids=['round2first','round2second','round2third','round2fourth','round2fifth','round2sixth','round2seventh','round2eighth'];
+  var listofids=['round2first8','round2second8','round2third8','round2fourth8','round2fifth8','round2sixth8','round2seventh8','round2eighth8'];
   var count=0;
   if(v===0){
     for(var x of listofids){
@@ -48,6 +48,6 @@ function convert(thing,v){
 }
 function enterinput(v){
   var names;
-  names=document.getElementById('enternames').value;
+  names=document.getElementById('enternames8').value;
   convert(names,v);
 }

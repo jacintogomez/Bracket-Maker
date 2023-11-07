@@ -48,6 +48,6 @@ function convert(thing,v){
 }
 function enterinput(v){
   var names;
-  names=document.getElementById('enternames').value;
+  names=document.getElementById('enternames16').value;
   convert(names,v);
 }
