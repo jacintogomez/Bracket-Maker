@@ -15,7 +15,7 @@ screenselect.addEventListener("change",function(){
         screenstyles.href="team8.css";
         screenscript.src="into8.js";
     }else if(screenselect.value==="screen2"){
-        screen1.style.display="non"
+        screen1.style.display="none"
         screen2.style.display="block";
         screen3.style.display="none";
         screen4.style.display="none";
