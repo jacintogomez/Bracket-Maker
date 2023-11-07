@@ -16,6 +16,7 @@
     .heading{
       color: yellow;
       font-size: 40px;
+      text-align: center;
     }
     .cent{
       text-align: center;
@@ -34,14 +35,15 @@
       <option value="screen3">32 Teams</option>
       <option value="screen4">64 Teams</option>
     </select>
+    <h2 style="color:white">8 Teams</h2>
+    <input type='text' id='enternames' value=''><br><br>
+    <button onclick='enterinput(0)'>Assign to Bracket</button>
+    <button onclick='enterinput(1)'>Randomize Seeds</button><br><br>
+    <div class="heading" id="winnermessage">
+      <h1></h1>
+    </div>
+  </div>
     <div id="screen1" class="hidden">
-      <h2 style="color:white">8 Teams</h2>
-      <input type='text' id='enternames' value=''><br><br>
-      <button onclick='enterinput(0)'>Assign to Bracket</button><br><br>
-      <button onclick='enterinput(1)'>Randomize Seeds</button><br><br>
-      <div class="heading" id="winnermessage">
-        <h1></h1>
-      </div>
       <div class="box t1 round r32h1" id="round2first" onclick="colc(this,document.getElementById('round2second'),document.getElementById('round3-1'))">
         <div class="namefield">
 
@@ -116,6 +118,173 @@
         <div class="namefield">
 
         </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div id="screen2" class="hidden">
+    <div class="box one" id="first" onclick="colc(this,document.getElementById('second'),document.getElementById('round2first'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box two" id="second" onclick="colc(this,document.getElementById('first'),document.getElementById('round2first'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box three" id="third" onclick="colc(this,document.getElementById('fourth'),document.getElementById('round2second'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box four" id="fourth" onclick="colc(this,document.getElementById('third'),document.getElementById('round2second'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box five" id="fifth" onclick="colc(this,document.getElementById('sixth'),document.getElementById('round2third'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box six" id="sixth" onclick="colc(this,document.getElementById('fifth'),document.getElementById('round2third'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box seven" id="seventh" onclick="colc(this,document.getElementById('eighth'),document.getElementById('round2fourth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box eight" id="eighth" onclick="colc(this,document.getElementById('seventh'),document.getElementById('round2fourth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box nine" id="ninth" onclick="colc(this,document.getElementById('tenth'),document.getElementById('round2fifth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box ten" id="tenth" onclick="colc(this,document.getElementById('ninth'),document.getElementById('round2fifth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box eleven" id="eleventh" onclick="colc(this,document.getElementById('twelfth'),document.getElementById('round2sixth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box twelve" id="twelfth" onclick="colc(this,document.getElementById('eleventh'),document.getElementById('round2sixth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box thirteen" id="thirteenth" onclick="colc(this,document.getElementById('fourteenth'),document.getElementById('round2seventh'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box fourteen" id="fourteenth" onclick="colc(this,document.getElementById('thirteenth'),document.getElementById('round2seventh'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box fifteen" id="fifteenth" onclick="colc(this,document.getElementById('sixteenth'),document.getElementById('round2eighth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box sixteen" id="sixteenth" onclick="colc(this,document.getElementById('fifteenth'),document.getElementById('round2eighth'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t1 round r32h1" id="round2first" onclick="colc(this,document.getElementById('round2second'),document.getElementById('round3-1'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t2 round r32h2" id="round2second" onclick="colc(this,document.getElementById('round2first'),document.getElementById('round3-1'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t3 round r32h3" id="round2third" onclick="colc(this,document.getElementById('round2fourth'),document.getElementById('round3-2'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t4 round r32h4" id="round2fourth" onclick="colc(this,document.getElementById('round2third'),document.getElementById('round3-2'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t5 round r32h5" id="round2fifth" onclick="colc(this,document.getElementById('round2sixth'),document.getElementById('round3-3'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t6 round r32h6" id="round2sixth" onclick="colc(this,document.getElementById('round2fifth'),document.getElementById('round3-3'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t7 round r32h7" id="round2seventh" onclick="colc(this,document.getElementById('round2eighth'),document.getElementById('round3-4'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box t8 round r32h8" id="round2eighth" onclick="colc(this,document.getElementById('round2seventh'),document.getElementById('round3-4'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box s1 round r16h1" id="round3-1" onclick="colc(this,document.getElementById('round3-2'),document.getElementById('quarter1'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box s2 round r16h2" id="round3-2" onclick="colc(this,document.getElementById('round3-1'),document.getElementById('quarter1'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box s3 round r16h3" id="round3-3" onclick="colc(this,document.getElementById('round3-4'),document.getElementById('quarter2'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box s4 round r16h4" id="round3-4" onclick="colc(this,document.getElementById('round3-3'),document.getElementById('quarter2'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box q1 round qh1" id="quarter1" onclick="colc(this,document.getElementById('quarter2'),document.getElementById('final'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="box q2 round qh2" id="quarter2" onclick="colc(this,document.getElementById('quarter1'),document.getElementById('final'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+    <div class="bin fin round sfh1" id="final" onclick="winner(this,document.getElementById('winnermessage'))">
+      <div class="namefield">
+
       </div>
     </div>
   </div>
