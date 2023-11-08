@@ -1,4 +1,5 @@
 let listofids;
+let enterfield;
 
 function winner(me,you){
   me.style.background='yellow';
@@ -46,6 +47,6 @@ function convert(thing,randomize){
 }
 function enterinput(randomize){
   var names;
-  names=document.getElementById('enternames').value;
+  names=document.getElementById(enterfield).value;
   convert(names,randomize);
 }
