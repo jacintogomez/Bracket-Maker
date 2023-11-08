@@ -2,11 +2,11 @@
 <html lang='en-us'>
 <meta name='viewport' content='width=device-width,initial-scale=1.0'>
 <head>
-  <title>8 Team Bracket</title>
-  <link rel="icon" href="img/tournimg.png">
+  <title>16 Team Bracket</title>
+  <link rel="icon" href="../img/tournimg.png">
   <style>
     body{
-      background-image: url("img/bckgrnd.jpeg");
+      background-image: url("../img/bckgrnd.jpeg");
       height: 100%;
       background-repeat: repeat;
       background-position: center;
@@ -211,7 +211,7 @@
 <body>
 <div class="cent">
   <h1 style="color:white">Tournament Bracket</h1>
-  <h2 style="color:white">8 Teams</h2>
+  <h2 style="color:white">16 Teams</h2>
   <input type='text' id='enternames' value=''><br><br>
   <button onclick='enterinput(0)'>Assign to Bracket</button><br><br>
   <button onclick='enterinput(1)'>Randomize Seeds</button><br><br>
@@ -219,7 +219,86 @@
     <h1></h1>
   </div>
 </div>
+<div class="box one" id="first" onclick="colc(this,document.getElementById('second'),document.getElementById('round2first'))">
+  <div class="namefield">
 
+  </div>
+</div>
+<div class="box two" id="second" onclick="colc(this,document.getElementById('first'),document.getElementById('round2first'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box three" id="third" onclick="colc(this,document.getElementById('fourth'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box four" id="fourth" onclick="colc(this,document.getElementById('third'),document.getElementById('round2second'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box five" id="fifth" onclick="colc(this,document.getElementById('sixth'),document.getElementById('round2third'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box six" id="sixth" onclick="colc(this,document.getElementById('fifth'),document.getElementById('round2third'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box seven" id="seventh" onclick="colc(this,document.getElementById('eighth'),document.getElementById('round2fourth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box eight" id="eighth" onclick="colc(this,document.getElementById('seventh'),document.getElementById('round2fourth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box nine" id="ninth" onclick="colc(this,document.getElementById('tenth'),document.getElementById('round2fifth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box ten" id="tenth" onclick="colc(this,document.getElementById('ninth'),document.getElementById('round2fifth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box eleven" id="eleventh" onclick="colc(this,document.getElementById('twelfth'),document.getElementById('round2sixth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box twelve" id="twelfth" onclick="colc(this,document.getElementById('eleventh'),document.getElementById('round2sixth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box thirteen" id="thirteenth" onclick="colc(this,document.getElementById('fourteenth'),document.getElementById('round2seventh'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fourteen" id="fourteenth" onclick="colc(this,document.getElementById('thirteenth'),document.getElementById('round2seventh'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box fifteen" id="fifteenth" onclick="colc(this,document.getElementById('sixteenth'),document.getElementById('round2eighth'))">
+  <div class="namefield">
+
+  </div>
+</div>
+<div class="box sixteen" id="sixteenth" onclick="colc(this,document.getElementById('fifteenth'),document.getElementById('round2eighth'))">
+  <div class="namefield">
+
+  </div>
+</div>
 <div class="box t1 round r32h1" id="round2first" onclick="colc(this,document.getElementById('round2second'),document.getElementById('round3-1'))">
   <div class="namefield">
 
@@ -313,7 +392,7 @@
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
   function sortintobracket(input,v){
-    var listofids=['round2first','round2second','round2third','round2fourth','round2fifth','round2sixth','round2seventh','round2eighth'];
+    var listofids=['first','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth','eleventh','twelfth','thirteenth','fourteenth','fifteenth','sixteenth'];
     var count=0;
     if(v===0){
       for(var x of listofids){
