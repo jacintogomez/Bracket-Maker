@@ -10,6 +10,7 @@
 </head>
 <body>
     <select id="screenSelector">
+        <option disabled selected>Pick one</option>
         <option value="screen1">Screen 1</option>
         <option value="screen2">Screen 2</option>
     </select>
@@ -42,7 +43,19 @@
               screen2.style.display = "block";
           }
       });
+document.getElementById("screenSelector").addEventListener("change", function() {
+  // Get the select element
+  var selectElement = this;
 
+  // Get the selected option (not the placeholder)
+  var selectedOption = selectElement.querySelector("option:not([disabled][selected])");
+
+  // Remove the placeholder option
+  selectElement.removeChild(selectElement.querySelector("option[disabled][selected]"));
+
+  // Optionally, you can do something with the selected option here
+  console.log("Selected option: " + selectedOption.value);
+});
     </script>
 </body>
 </html>

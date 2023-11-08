@@ -24,12 +24,30 @@
     .hidden{
       display: none;
     }
+    button{
+      background-color: red;
+      color: white;
+      border-radius: 20px;
+      height: 35px;
+      width: 150px;
+      font-size: medium;
+    }
+    button:hover{
+      background-color: darkred;
+    }
+    input{
+      width: 250px;
+      padding-left: 7px;
+      border-radius: 10px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <div class="cent">
     <h1 style="color:white">Tournament Bracket</h1>
-    <select id="screenselector">
+    <select style="text-align:center;border-radius:10px;width:100px" id="screenselector">
+      <option disabled selected>Enter #</option>
       <option value="screen1">8 Teams</option>
       <option value="screen2">16 Teams</option>
       <option value="screen3">32 Teams</option>
