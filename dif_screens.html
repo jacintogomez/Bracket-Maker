@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link id="styles" rel="stylesheet" href="exp.css">
     <style>
         .hidden {
             display: none;
@@ -14,28 +15,33 @@
     </select>
 
     <div id="screen1" class="hidden">
-        <h1>dick cheese ass mf</h1>
+      <div class="school">
+        <h1 id="nyu">New York University, Tandon School of Engineering</h1>
+      </div>
     </div>
 
     <div id="screen2" class="hidden">
-        <h1>mf stinky toe ass neck ass mf</h1>
+      <div class="school">
+        <h1 id="cornell">Cornell University, College of Engineering</h1>
+      </div>
     </div>
-
     <script>
       const screenSelector = document.getElementById("screenSelector");
       const screen1 = document.getElementById("screen1");
       const screen2 = document.getElementById("screen2");
+      const jstyles = document.getElementById("styles");
 
       screenSelector.addEventListener("change", function () {
           if (screenSelector.value === "screen1") {
+              jstyles.href = "other.css";
               screen1.style.display = "block";
               screen2.style.display = "none";
           } else if (screenSelector.value === "screen2") {
+              jstyles.href = "exp.css";
               screen1.style.display = "none";
               screen2.style.display = "block";
           }
       });
-    </script>
 
     </script>
 </body>
