@@ -5,6 +5,12 @@ const screen2=document.getElementById("screen2"); //16 teams
 const screen3=document.getElementById("screen3"); //32 teams
 const screen4=document.getElementById("screen4"); //64 teams
 
+function changetitle(){
+    document.title=document.getElementById("titlechanger").value;
+    document.getElementById("titlechanger").style.display='none';
+    document.getElementById("titlechangebutton").style.display='none';
+}
+
 screenselect.addEventListener("change",function(){
     if (screenselect.value==="screen1") {
         listofids=['round2first8','round2second8','round2third8','round2fourth8','round2fifth8','round2sixth8','round2seventh8','round2eighth8'];
