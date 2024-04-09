@@ -7,6 +7,7 @@ const screen4=document.getElementById("screen4"); //64 teams
 
 function changetitle(){
     document.title=document.getElementById("titlechanger").value;
+    document.getElementById("main-heading").innerText=document.getElementById("titlechanger").value;
     document.getElementById("titlechanger").style.display='none';
     document.getElementById("titlechangebutton").style.display='none';
 }
