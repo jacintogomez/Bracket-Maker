@@ -8,6 +8,7 @@ function winner(me,you){
   let finale=me.getElementsByClassName('namefield')[0].innerHTML;
   you.innerHTML='Winner is '+finale+'!';
   document.title=me.getElementsByClassName('namefield')[0].innerHTML+' Wins!!';
+  protect_input=false;
   //document.title+=' [DONE]';
 }
 
@@ -61,7 +62,7 @@ function enterinput(randomize){
   protect_input=true;
 }
 
-window.addEventListener('beforeUnload',function(event){
+window.addEventListener('beforeunload',function(event){
   if(protect_input){
     event.preventDefault();
     event.returnValue='';
