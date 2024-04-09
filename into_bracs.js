@@ -5,6 +5,8 @@ function winner(me,you){
   me.style.background='yellow';
   let finale=me.getElementsByClassName('namefield')[0].innerHTML;
   you.innerHTML='Winner is '+finale+'!';
+  document.title=me.getElementsByClassName('namefield')[0].innerHTML+' Wins !';
+  //document.title+=' [DONE]';
 }
 function colc(element,sister,next){
   next.innerHTML=element.innerHTML;
