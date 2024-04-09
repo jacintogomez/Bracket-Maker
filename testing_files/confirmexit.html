@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with Unsaved Changes Warning</title>
+</head>
+<body>
+
+<button id="startButton">Start</button>
+
+<script>
+    let changesMade = false;
+
+    document.getElementById('startButton').addEventListener('click', function() {
+        changesMade = true;
+    });
+
+    window.addEventListener('beforeunload', function(event) {
+        if (changesMade) {
+            event.preventDefault();
+            event.returnValue = 'k';
+            return 'Are you sure you want to leave this page? You have unsaved changes.';
+        }
+    });
+</script>
+
+</body>
+</html>

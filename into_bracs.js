@@ -1,21 +1,26 @@
 let listofids;
 let enterfield;
+let protect_input=false;
+//^once there is input in the bracket it will not allow you to exit the page without a confirmation
 
 function winner(me,you){
   me.style.background='yellow';
   let finale=me.getElementsByClassName('namefield')[0].innerHTML;
   you.innerHTML='Winner is '+finale+'!';
-  document.title=me.getElementsByClassName('namefield')[0].innerHTML+' Wins !';
+  document.title=me.getElementsByClassName('namefield')[0].innerHTML+' Wins!!';
   //document.title+=' [DONE]';
 }
+
 function colc(element,sister,next){
   next.innerHTML=element.innerHTML;
   sister.style.background='#F2B8B8';
   element.style.background='#B8F2B8';
 }
+
 function randomIntFromInterval(min, max) { // min and max included
   return Math.floor(Math.random()*(max-min+1)+min)
 }
+
 function sortintobracket(input,randomize){
   let count=0;
   if(randomize===0){
@@ -33,6 +38,7 @@ function sortintobracket(input,randomize){
     }
   }
 }
+
 function convert(thing,randomize){
   let result=[];
   let temp='';
@@ -47,8 +53,18 @@ function convert(thing,randomize){
   result.push(temp);
   return sortintobracket(result,randomize);
 }
+
 function enterinput(randomize){
   let names=document.getElementById(enterfield).value;
   names=names.trim();
   convert(names,randomize);
+  protect_input=true;
 }
+
+window.addEventListener('beforeUnload',function(event){
+  if(protect_input){
+    event.preventDefault();
+    event.returnValue='';
+    return 'Warning: tournament is not finished yet. Are you sure you want to exit?';
+  }
+});
