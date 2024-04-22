@@ -44,7 +44,7 @@ function convert(thing,randomize){
   let result=[];
   let temp='';
   for(let i=0;i<thing.length;i++){
-    if(thing[i]!==' '){
+    if(thing[i]!==','){
       temp+=thing[i];
     }else{
       result.push(temp);
@@ -52,6 +52,9 @@ function convert(thing,randomize){
     }
   }
   result.push(temp);
+  if(result.length!==8&&result.length!==16&&result.length!==32&&result.length!==64){
+    alert('Number of inputs does not match bracket size');
+  }
   return sortintobracket(result,randomize);
 }
 
