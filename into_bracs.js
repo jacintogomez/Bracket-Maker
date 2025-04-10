@@ -1,15 +1,17 @@
 let listofids;
 let enterfield;
-let protect_input=false;
+let game_in_progress=false;
 //^once there is input in the bracket it will not allow you to exit the page without a confirmation
+let loadbutton=document.getElementById('load');
+let savebutton=document.getElementById('save');
 
+//end game
 function winner(me,you){
     me.style.background='yellow';
     let finale=me.getElementsByClassName('namefield')[0].innerHTML;
     you.innerHTML='Winner is '+finale+'!';
     document.title=me.getElementsByClassName('namefield')[0].innerHTML+' Wins!!';
-    protect_input=false;
-    //document.title+=' [DONE]';
+    game_in_progress=false;
 }
 
 function colc(element,sister,next){
@@ -58,15 +60,18 @@ function convert(thing,randomize){
     return sortintobracket(result,randomize);
 }
 
+//start game
 function enterinput(randomize){
     let names=document.getElementById(enterfield).value;
     names=names.trim();
     convert(names,randomize);
-    protect_input=true;
+    game_in_progress=true;
+    loadbutton.style.display='none';
+    savebutton.style.display='block';
 }
 
 window.addEventListener('beforeunload',function(event){
-    if(protect_input){
+    if(game_in_progress){
         event.preventDefault();
         event.returnValue='';
         return 'Warning: tournament is not finished yet. Are you sure you want to exit?';

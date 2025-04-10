@@ -49,6 +49,9 @@
 <body>
   <div class="cent">
     <h1 id="main-heading" style="color:white">Tournament Bracket</h1>
+    <button id='save' onclick='save_game()'>Save</button>
+    <input type='file' id='file'>
+    <button id='load' onclick='load_game(document.getElementById("file"))'>Load</button>
     <select style="text-align:center;border-radius:10px;width:100px" id="screenselector">
       <option disabled selected>Select #</option>
       <option value="screen1">8 Teams</option>
