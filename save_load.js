@@ -1,5 +1,4 @@
 const screens=[screen1,screen2,screen3,screen4];
-const title=document.getElementById('main-heading').innerHTML;
 let allteams=teamof8ids.concat(teamof16ids,teamof32ids,teamof64ids);
 
 function get_current_teamcount(){
@@ -35,9 +34,9 @@ function switch_to_saved_teamcount(screen){
 
 function form_current_bracket_state(){
     let entries=[];
-    for(let entry of allteams){entries.push(entry.innerHTML);}
+    for(let entry of allteams){entries.push(document.getElementById(entry).innerHTML);}
     const data={
-        title:title,
+        title:document.title,
         teams:get_current_teamcount(),
         entries:entries,
     }
@@ -50,7 +49,7 @@ function save_game(){
     const url=URL.createObjectURL(blob);
     const a=document.createElement('a');
     a.href=url;
-    a.download=title+'-bracket.json';
+    a.download=document.title+'-bracket.json';
     a.click();
     URL.revokeObjectURL(url);
 }
