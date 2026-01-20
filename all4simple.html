@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<head>
+  <title>Tournament Bracket</title>
+  <link id="styles" rel="stylesheet" href="team8.css">
+  <link rel="icon" href="img/tournimg.png">
+  <style>
+    body{
+      background-image: url("img/bckgrnd.jpeg");
+      height: 100%;
+      background-repeat: repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .cent{
+      text-align: center;
+    }
+    .heading{
+      color: yellow;
+      font-size: 40px;
+      text-align: center;
+    }
+    .hidden{
+      display: none;
+    }
+    button{
+      background-color: #df03fc;
+      color: white;
+      border-radius: 20px;
+      height: 35px;
+      width: 150px;
+      font-size: medium;
+    }
+    button:hover{
+      background-color: darkred;
+    }
+    input{
+      width: 250px;
+      padding-left: 7px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    input:hover{
+      border: 2px solid aqua;
+    }
+  </style>
+</head>
+<body>
+  <div class="cent">
+    <h1 id="main-heading" style="color:white">Tournament Bracket</h1>
+    <select style="text-align:center;border-radius:10px;width:100px" id="screenselector">
+      <option disabled selected>Select #</option>
+      <option value="screen1">8 Teams</option>
+      <option value="screen2">16 Teams</option>
+      <option value="screen3">32 Teams</option>
+      <option value="screen4">64 Teams</option>
+    </select>
+  </div>
+    <div id="screen1" class="hidden">
+      <div class="cent">
+        <h2 style="color:white">8 Teams</h2>
+        <input type='text' id='enternames8' value='' placeholder="team1,team2,team3,..."><br><br>
+        <button id='assign' onclick='enterinput(0)'>Assign to Bracket</button>
+        <button id='randomize' onclick='enterinput(1)'>Randomize Seeds</button>
+        <button id='save' class='hidden' onclick='save_game()'>Save</button>
+        <input type='file' id='file' style='display:none' onchange='load_game(this.files[0])'>
+        <button id='load' onclick="document.getElementById('file').click()">Load</button><br><br>
+        <div class="heading" id="winnermessage8">
+          <h1></h1>
+        </div>
+      </div>
+      <div class="box t1 round r32h1" id="round2first8" onclick="colc(this,document.getElementById('round2second8'),document.getElementById('round3-1-8'))">
+        <div class="namefield">
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+  <div id="screen2" class="hidden">
+    <div class="cent">
+        <h2 style="color:white">16 Teams</h2>
+        <input type='text' id='enternames16' value='' placeholder="team1,team2,team3,..."><br><br>
+        <button onclick='enterinput(0)'>Assign to Bracket</button>
+        <button onclick='enterinput(1)'>Randomize Seeds</button><br><br>
+        <div class="heading" id="winnermessage16">
+          <h1></h1>
+        </div>
+      </div>
+    <div class="box one" id="first-16" onclick="colc(this,document.getElementById('second-16'),document.getElementById('round2first-16'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div id="screen3" class="hidden">
+    <div class="cent">
+      <h2 style="color:white">32 Teams</h2>
+      <input type='text' id='enternames32' value='' placeholder="team1,team2,team3,..."><br><br>
+      <button onclick='enterinput(0)'>Assign to Bracket</button>
+      <button onclick='enterinput(1)'>Randomize Seeds</button><br><br>
+      <div class="heading" id="winnermessage32">
+        <h1></h1>
+      </div>
+    </div>
+    <div class="box one" id="first-32" onclick="colc(this,document.getElementById('second-32'),document.getElementById('round2first-32'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div id="screen4" class="hidden">
+    <div class="cent">
+      <h2 style="color:white">64 Teams</h2>
+      <input type='text' id='enternames64' value='' placeholder="team1,team2,team3,..."><br><br>
+      <button onclick='enterinput(0)'>Assign to Bracket</button>
+      <button onclick='enterinput(1)'>Randomize Seeds</button><br><br>
+      <div class="heading" id="winnermessage64">
+        <h1></h1>
+      </div>
+    </div>
+    <div class="box one" id="first" onclick="colc(this,document.getElementById('second'),document.getElementById('round2first'))">
+      <div class="namefield">
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="hide_screen.js"></script>
+  <script src="into_bracs.js"></script>
+  <script src="save_load.js"></script>
+  <div class="cent">
+    <br><br>
+    <input type="text" id="titlechanger" value="" placeholder="enter bracket name..."><br><br>
+    <button id='titlechangebutton' onclick="changetitle()">Rename page</button><br><br>
+  </div>
+</body>
+</html>
