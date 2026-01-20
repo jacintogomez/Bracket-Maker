@@ -15,6 +15,8 @@ function changetitle(){
     document.getElementById('main-heading').innerText=document.getElementById('titlechanger').value;
     document.getElementById('titlechanger').style.display='none';
     document.getElementById('titlechangebutton').style.display='none';
+    loadbutton.style.display='none';
+    savebutton.style.display='block';
 }
 
 screenselect.addEventListener('change',function(){

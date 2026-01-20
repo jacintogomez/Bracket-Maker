@@ -1319,18 +1319,18 @@
 
 
 
-  <script src="hide_screen.js"></script>
-  <script src="into_bracs.js"></script>
-  <script src="save_load.js"></script>
   <div class="cent">
     <br><br>
     <input type="text" id="titlechanger" value="" placeholder="enter bracket name..."><br><br>
     <button id='titlechangebutton' onclick="changetitle()">Rename page</button><br><br>
   </div>
   <footer class="bottom">
-    <button id='save' onclick='save_game()'>Save</button>
+    <button id='save' class='hidden' onclick='save_game()'>Save</button>
     <input type='file' id='file' style='display:none' onchange='load_game(this.files[0])'>
-    <button onclick="document.getElementById('file').click()">Load</button>
+    <button id='load' onclick="document.getElementById('file').click()">Load</button>
   </footer>
+  <script src="hide_screen.js"></script>
+  <script src="into_bracs.js"></script>
+  <script src="save_load.js"></script>
 </body>
 </html>

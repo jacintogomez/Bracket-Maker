@@ -79,4 +79,6 @@ function load_game(file){
     reader.readAsText(file);
     document.getElementById('titlechanger').style.display='none';
     document.getElementById('titlechangebutton').style.display='none';
+    loadbutton.style.display='none';
+    savebutton.style.display='block';
 }

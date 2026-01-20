@@ -7,6 +7,7 @@ let savebutton=document.getElementById('save');
 
 //end game
 function winner(me,you){
+    savebutton.style.display='none';
     me.style.background='yellow';
     let finale=me.getElementsByClassName('namefield')[0].innerHTML;
     you.innerHTML='Winner is '+finale+'!';
