@@ -16,10 +16,6 @@
     .cent{
       text-align: center;
     }
-    .bottom{
-      padding: 16px;
-      text-align: center;
-    }
     .heading{
       color: yellow;
       font-size: 40px;
@@ -66,7 +62,10 @@
         <h2 style="color:white">8 Teams</h2>
         <input type='text' id='enternames8' value='' placeholder="team1,team2,team3,..."><br><br>
         <button id='assign' onclick='enterinput(0)'>Assign to Bracket</button>
-        <button id='randomize' onclick='enterinput(1)'>Randomize Seeds</button><br><br>
+        <button id='randomize' onclick='enterinput(1)'>Randomize Seeds</button>
+        <button id='save' class='hidden' onclick='save_game()'>Save</button>
+        <input type='file' id='file' style='display:none' onchange='load_game(this.files[0])'>
+        <button id='load' onclick="document.getElementById('file').click()">Load</button><br><br>
         <div class="heading" id="winnermessage8">
           <h1></h1>
         </div>
@@ -1319,18 +1318,13 @@
 
 
 
+  <script src="hide_screen.js"></script>
+  <script src="into_bracs.js"></script>
+  <script src="save_load.js"></script>
   <div class="cent">
     <br><br>
     <input type="text" id="titlechanger" value="" placeholder="enter bracket name..."><br><br>
     <button id='titlechangebutton' onclick="changetitle()">Rename page</button><br><br>
   </div>
-  <footer class="bottom">
-    <button id='save' class='hidden' onclick='save_game()'>Save</button>
-    <input type='file' id='file' style='display:none' onchange='load_game(this.files[0])'>
-    <button id='load' onclick="document.getElementById('file').click()">Load</button>
-  </footer>
-  <script src="hide_screen.js"></script>
-  <script src="into_bracs.js"></script>
-  <script src="save_load.js"></script>
 </body>
 </html>
