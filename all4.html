@@ -16,6 +16,10 @@
     .cent{
       text-align: center;
     }
+    .bottom{
+      padding: 16px;
+      text-align: center;
+    }
     .heading{
       color: yellow;
       font-size: 40px;
@@ -49,9 +53,6 @@
 <body>
   <div class="cent">
     <h1 id="main-heading" style="color:white">Tournament Bracket</h1>
-    <button id='save' onclick='save_game()'>Save</button>
-    <input type='file' id='file'>
-    <button id='load' onclick='load_game(document.getElementById("file"))'>Load</button>
     <select style="text-align:center;border-radius:10px;width:100px" id="screenselector">
       <option disabled selected>Select #</option>
       <option value="screen1">8 Teams</option>
@@ -1326,5 +1327,10 @@
     <input type="text" id="titlechanger" value="" placeholder="enter bracket name..."><br><br>
     <button id='titlechangebutton' onclick="changetitle()">Rename page</button><br><br>
   </div>
+  <footer class="bottom">
+    <button id='save' onclick='save_game()'>Save</button>
+    <input type='file' id='file' style='display:none' onchange='load_game(this.files[0])'>
+    <button onclick="document.getElementById('file').click()">Load</button>
+  </footer>
 </body>
 </html>
