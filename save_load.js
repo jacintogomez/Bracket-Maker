@@ -59,8 +59,9 @@ function restore_bracket(data){
     switch_to_saved_teamcount(data.teams);
     for(const [i,x] of data.entries.entries()){
         const namefield=document.getElementById(allteams[i]).querySelector('.namefield');
+        //console.log('counting',allteams[i],x,namefield);
         if(namefield){
-            namefield.textcontent=x;
+            namefield.innerHTML=x;
         }
     }
 }
@@ -76,4 +77,6 @@ function load_game(file){
         }
     };
     reader.readAsText(file);
+    document.getElementById('titlechanger').style.display='none';
+    document.getElementById('titlechangebutton').style.display='none';
 }
