@@ -34,7 +34,7 @@ function switch_to_saved_teamcount(screen){
 
 function form_current_bracket_state(){
     let entries=[];
-    for(let entry of allteams){entries.push(document.getElementById(entry).innerHTML);}
+    for(let entry of allteams){entries.push(document.getElementById(entry).textContent.trim());}
     const data={
         title:document.title,
         teams:get_current_teamcount(),
@@ -58,7 +58,10 @@ function restore_bracket(data){
     document.getElementById('main-heading').innerHTML=data.title;
     switch_to_saved_teamcount(data.teams);
     for(const [i,x] of data.entries.entries()){
-        allteams[i].innerHTML=x;
+        const namefield=document.getElementById(allteams[i]).querySelector('.namefield');
+        if(namefield){
+            namefield.textcontent=x;
+        }
     }
 }
 
