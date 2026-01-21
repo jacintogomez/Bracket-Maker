@@ -48,6 +48,7 @@ function form_current_bracket_state(){
         teams:team_count,
         entries:entries,
         colors:colors,
+        input_field:enterfield.value,
     }
     return data;
 }
@@ -76,6 +77,7 @@ function restore_bracket(data){
         const element=document.getElementById(relevant_ids[i]);
         if(element&&color){element.style.background=color;}
     }
+    enterfield.value=data.input_field;
 }
 
 function load_game(file){
