@@ -1,12 +1,8 @@
 const screens=[screen1,screen2,screen3,screen4];
-let allteams=teamof8ids.concat(teamof16ids,teamof32ids,teamof64ids);
-
-function get_current_teamcount(){
-    if(screen1.style.display!=='none'){return 8;}
-    else if(screen2.style.display!=='none'){return 16;}
-    else if(screen3.style.display!=='none'){return 32;}
-    else {return 64;}
-}
+const allteamof8ids=teamof8ids.concat(intermediate8);
+const allteamof16ids=teamof16ids.concat(intermediate16);
+const allteamof32ids=teamof32ids.concat(intermediate32);
+const allteamof64ids=teamof64ids.concat(intermediate64);
 
 function switch_to_saved_teamcount(screen){
     for(let screen of screens){screen.style.display='none';}
@@ -32,13 +28,27 @@ function switch_to_saved_teamcount(screen){
     }
 }
 
+function get_team_ids(tc){
+    if(tc===8){return allteamof8ids;}
+    else if(tc===16){return allteamof16ids;}
+    else if(tc===32){return allteamof32ids;}
+    else if(tc===32){return allteamof64ids;}
+}
+
 function form_current_bracket_state(){
     let entries=[];
-    for(let entry of allteams){entries.push(document.getElementById(entry).textContent.trim());}
+    let colors=[];
+    const relevant_ids=get_team_ids(team_count);
+    for(let entry of relevant_ids){
+        entries.push(document.getElementById(entry).textContent.trim());
+        colors.push(document.getElementById(entry).style.background);
+    }
     const data={
         title:document.title,
-        teams:get_current_teamcount(),
+        teams:team_count,
         entries:entries,
+        colors:colors,
+        input_field:enterfield.value,
     }
     return data;
 }
@@ -49,7 +59,7 @@ function save_game(){
     const url=URL.createObjectURL(blob);
     const a=document.createElement('a');
     a.href=url;
-    a.download=document.title+'-bracket.json';
+    a.download=document.title+' bracket.json';
     a.click();
     URL.revokeObjectURL(url);
 }
@@ -57,13 +67,17 @@ function save_game(){
 function restore_bracket(data){
     document.getElementById('main-heading').innerHTML=data.title;
     switch_to_saved_teamcount(data.teams);
-    for(const [i,x] of data.entries.entries()){
-        const namefield=document.getElementById(allteams[i]).querySelector('.namefield');
-        //console.log('counting',allteams[i],x,namefield);
-        if(namefield){
-            namefield.innerHTML=x;
-        }
+    let relevant_ids=get_team_ids(data.teams);
+    for(const [i,name] of data.entries.entries()){
+        const element=document.getElementById(relevant_ids[i])
+        const namefield=element?.querySelector('.namefield');
+        if(namefield){namefield.innerHTML=name;}
     }
+    for(const [i,color] of data.colors.entries()){
+        const element=document.getElementById(relevant_ids[i]);
+        if(element&&color){element.style.background=color;}
+    }
+    enterfield.value=data.input_field;
 }
 
 function load_game(file){
