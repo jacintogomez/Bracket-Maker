@@ -1,12 +1,8 @@
 const screens=[screen1,screen2,screen3,screen4];
-let allteams=teamof8ids.concat(teamof16ids,teamof32ids,teamof64ids);
-
-function get_current_teamcount(){
-    if(screen1.style.display!=='none'){return 8;}
-    else if(screen2.style.display!=='none'){return 16;}
-    else if(screen3.style.display!=='none'){return 32;}
-    else {return 64;}
-}
+const allteamof8ids=teamof8ids.concat(intermediate8);
+const allteamof16ids=teamof16ids.concat(intermediate16);
+const allteamof32ids=teamof32ids.concat(intermediate32);
+const allteamof64ids=teamof64ids.concat(intermediate64);
 
 function switch_to_saved_teamcount(screen){
     for(let screen of screens){screen.style.display='none';}
@@ -37,7 +33,7 @@ function form_current_bracket_state(){
     for(let entry of allteams){entries.push(document.getElementById(entry).textContent.trim());}
     const data={
         title:document.title,
-        teams:get_current_teamcount(),
+        teams:team_count,
         entries:entries,
     }
     return data;
@@ -59,7 +55,6 @@ function restore_bracket(data){
     switch_to_saved_teamcount(data.teams);
     for(const [i,x] of data.entries.entries()){
         const namefield=document.getElementById(allteams[i]).querySelector('.namefield');
-        //console.log('counting',allteams[i],x,namefield);
         if(namefield){
             namefield.innerHTML=x;
         }
