@@ -1,13 +1,12 @@
 let listofids;
-let enterfield;
 let game_in_progress=false;
 //^once there is input in the bracket it will not allow you to exit the page without a confirmation
+let enterfield=document.getElementById('enternames');
 let loadbutton=document.getElementById('load');
 let savebutton=document.getElementById('save');
 
 //end game
 function winner(me,you){
-    savebutton.style.display='none';
     me.style.background='yellow';
     let finale=me.getElementsByClassName('namefield')[0].innerHTML;
     you.innerHTML='Winner is '+finale+'!';
@@ -43,29 +42,25 @@ function sortintobracket(input,randomize){
     }
 }
 
-function convert(thing,randomize){
-    let result=[];
-    let temp='';
-    for(let i=0;i<thing.length;i++){
-        if(thing[i]!==','){
-            temp+=thing[i];
-        }else{
-            result.push(temp);
-            temp='';
-        }
+function validate_count(names,size){
+    const inputs=names.length;
+    if(inputs!==size){
+        let error_msg='Number of inputs '+inputs+' does not match bracket size '+team_count
+        alert(error_msg);
+        return false;
     }
-    result.push(temp);
-    if(result.length!==8&&result.length!==16&&result.length!==32&&result.length!==64){
-        alert('Number of inputs does not match bracket size');
-    }
-    return sortintobracket(result,randomize);
+    return true;
 }
 
 //start game
 function enterinput(randomize){
-    let names=document.getElementById(enterfield).value;
-    names=names.trim();
-    convert(names,randomize);
+    const content=enterfield.value;
+    for(let x of content){
+        console.log('name or comma',x);
+    }
+    const names=content.trim().split(',');
+    if(!validate_count(names,team_count)){return;} //invalid input count
+    sortintobracket(names,randomize);
     game_in_progress=true;
     loadbutton.style.display='none';
     savebutton.style.display='block';
