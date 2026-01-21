@@ -55,9 +55,6 @@ function validate_count(names,size){
 //start game
 function enterinput(randomize){
     const content=enterfield.value;
-    for(let x of content){
-        console.log('name or comma',x);
-    }
     const names=content.trim().split(',');
     if(!validate_count(names,team_count)){return;} //invalid input count
     sortintobracket(names,randomize);
