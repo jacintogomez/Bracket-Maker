@@ -32,7 +32,7 @@ function get_team_ids(tc){
     if(tc===8){return allteamof8ids;}
     else if(tc===16){return allteamof16ids;}
     else if(tc===32){return allteamof32ids;}
-    else if(tc===32){return allteamof64ids;}
+    else if(tc===64){return allteamof64ids;}
 }
 
 function form_current_bracket_state(){
@@ -78,6 +78,7 @@ function restore_bracket(data){
         if(element&&color){element.style.background=color;}
     }
     enterfield.value=data.input_field;
+    team_count=data.teams;
 }
 
 function load_game(file){
@@ -95,4 +96,5 @@ function load_game(file){
     document.getElementById('titlechangebutton').style.display='none';
     loadbutton.style.display='none';
     savebutton.style.display='block';
+    game_in_progress=true;
 }
