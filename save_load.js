@@ -65,6 +65,7 @@ function save_game(){
 }
 
 function restore_bracket(data){
+    document.title=data.title;
     document.getElementById('main-heading').innerHTML=data.title;
     switch_to_saved_teamcount(data.teams);
     let relevant_ids=get_team_ids(data.teams);
