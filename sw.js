@@ -1,4 +1,4 @@
-const CACHE = 'brackets-v1';
+const CACHE = 'brackets-v2';
 
 const ASSETS = [
     './index.html',
@@ -17,8 +17,6 @@ const ASSETS = [
     './team32.css',
     './team64.css',
     './img/tournimg.png',
-    './img/icon-192.png',
-    './img/icon-512.png',
     './img/bckgrnd.jpeg',
     './manifest.webmanifest',
     './pwa.js'
