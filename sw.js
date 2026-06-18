@@ -1,25 +1,27 @@
 const CACHE = 'brackets-v1';
 
 const ASSETS = [
-    '/',
-    '/index.html',
-    '/all4.html',
-    '/all4simple.html',
-    '/single_bracket_files/bracket.html',
-    '/single_bracket_files/bracket8.html',
-    '/single_bracket_files/bracket16.html',
-    '/single_bracket_files/bracket64.html',
-    '/into_bracs.js',
-    '/position_ids.js',
-    '/save_load.js',
-    '/hide_screen.js',
-    '/team8.css',
-    '/team16.css',
-    '/team32.css',
-    '/team64.css',
-    '/img/tournimg.png',
-    '/img/bckgrnd.jpeg',
-    '/manifest.webmanifest'
+    './index.html',
+    './all4.html',
+    './all4simple.html',
+    './single_bracket_files/bracket.html',
+    './single_bracket_files/bracket8.html',
+    './single_bracket_files/bracket16.html',
+    './single_bracket_files/bracket64.html',
+    './into_bracs.js',
+    './position_ids.js',
+    './save_load.js',
+    './hide_screen.js',
+    './team8.css',
+    './team16.css',
+    './team32.css',
+    './team64.css',
+    './img/tournimg.png',
+    './img/icon-192.png',
+    './img/icon-512.png',
+    './img/bckgrnd.jpeg',
+    './manifest.webmanifest',
+    './pwa.js'
 ];
 
 self.addEventListener('install', e => {
@@ -55,7 +57,7 @@ self.addEventListener('fetch', e => {
             });
         }).catch(() => {
             // Offline fallback — return index for navigation requests
-            if (e.request.mode === 'navigate') return caches.match('/index.html');
+            if (e.request.mode === 'navigate') return caches.match('./all4.html');
         })
     );
 });

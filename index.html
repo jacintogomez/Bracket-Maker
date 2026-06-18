@@ -2,16 +2,9 @@
 <html>
 <head>
     <meta http-equiv="refresh" content="0; url=./all4.html">
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#df03fc" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <script defer src="./pwa.js" data-sw-src="./sw.js"></script>
 </head>
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
-                .then(reg => console.log('SW registered:', reg.scope))
-                .catch(err => console.error('SW failed:', err));
-        });
-    }
-</script>
 <body></body>
 </html>
